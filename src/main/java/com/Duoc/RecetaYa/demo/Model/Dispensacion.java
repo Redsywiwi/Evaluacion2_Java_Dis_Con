@@ -27,6 +27,8 @@ public class Dispensacion{
     private LocalDateTime fechadispensacion;
 
     @Column (nullable = false)
-    private String cantidad;
+    private int cantidad;
 
+    @Column (nullable = false)
+    private int preiofinal;
 }
