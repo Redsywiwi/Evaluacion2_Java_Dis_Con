@@ -1,0 +1,3 @@
+version: '3.8'
+#--- aqui ando como medio perdio pa que mentir ---#
+  services:
