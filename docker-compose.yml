@@ -1,3 +1,31 @@
 version: '3.8'
-#--- aqui ando como medio perdio pa que mentir ---#
-  services:
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb_recetaya
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - red-recetaya
+
+  app:
+    build: .
+    container_name: recetaya_app
+    ports:
+      - "8080:8080"
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/recetaya_db
+    depends_on:
+      - mongodb
+    networks:
+      - red-recetaya
+
+volumes:
+  mongo_data:
+
+networks:
+  red-recetaya:
+    driver: bridge

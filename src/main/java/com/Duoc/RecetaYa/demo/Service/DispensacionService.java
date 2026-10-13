@@ -18,7 +18,7 @@ public class DispensacionService {
         return dispensacionrepository.findAll();
     }
 
-    public Dispensacion buscarPorId(Long id) {
+    public Dispensacion buscarPorId(String id) {
         return dispensacionrepository.findById(id)
             .orElseThrow(() -> new DispensacionPerdidaException("Dispensacion no encontrada"));
     }
@@ -27,7 +27,7 @@ public class DispensacionService {
         return dispensacionrepository.save(dispensacion);
     }
 
-    public Dispensacion actualizar(Long id, Dispensacion coso){
+    public Dispensacion actualizar(String id, Dispensacion coso){
         Dispensacion disnueva = buscarPorId(id);
         disnueva.setProductodispensado(coso.getProductodispensado());
         disnueva.setFechadispensacion(coso.getFechadispensacion());
@@ -36,7 +36,7 @@ public class DispensacionService {
         return dispensacionrepository.save(disnueva);
     }
 
-    public void eliminar(Long id) {
+    public void eliminar(String id) {
         Dispensacion eliminardis= buscarPorId(id);
         dispensacionrepository.delete(eliminardis);
     }

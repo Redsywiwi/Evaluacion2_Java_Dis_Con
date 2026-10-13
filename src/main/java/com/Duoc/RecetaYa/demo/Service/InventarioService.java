@@ -17,7 +17,7 @@ public class InventarioService {
         return inventariorepository.findAll();
     }
 
-    public Inventario buscarPorId(Long id) {
+    public Inventario buscarPorId(String id) {
         return inventariorepository.findById(id)
             .orElseThrow(() -> new InventarioPerdidoException("Inventario no encontrado"));
     }
@@ -26,7 +26,7 @@ public class InventarioService {
         return inventariorepository.save(inventario);
     }
 
-    public Inventario actualizar(Long id, Inventario coso){
+    public Inventario actualizar(String id, Inventario coso){
         Inventario invnuevo = buscarPorId(id);
         invnuevo.setNombre(coso.getNombre());
         invnuevo.setCantidad(coso.getCantidad());
@@ -39,7 +39,7 @@ public class InventarioService {
         return inventariorepository.save(invnuevo);
     }
 
-    public void eliminar(Long id) {
+    public void eliminar(String id) {
         Inventario eliminarinv= buscarPorId(id);
         inventariorepository.delete(eliminarinv);
     }

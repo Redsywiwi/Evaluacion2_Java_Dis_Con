@@ -32,7 +32,7 @@ public class DispensacionController {
     }
 
     @GetMapping("/{id}")
-    public Dispensacion buscarporId(@PathVariable Long id) {
+    public Dispensacion buscarporId(@PathVariable String id) {
         return dispensacionService.buscarPorId(id);
     }
 
@@ -43,12 +43,12 @@ public class DispensacionController {
     }
 
     @PutMapping("/{id}")
-    public Dispensacion actualizar(@PathVariable Long id, @RequestBody Dispensacion dispensacion) {
+    public Dispensacion actualizar(@PathVariable String id, @RequestBody Dispensacion dispensacion) {
         return dispensacionService.actualizar(id, dispensacion);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> eliminar(@PathVariable Long id) {
+    public ResponseEntity<Void> eliminar(@PathVariable String id) {
         dispensacionService.eliminar(id);
         return ResponseEntity.noContent().build();
     }

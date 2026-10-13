@@ -31,7 +31,7 @@ public class InventarioController {
     }
 
     @GetMapping("/{id}")
-    public Inventario buscarporId(@PathVariable Long id) {
+    public Inventario buscarporId(@PathVariable String id) {
         return inventarioService.buscarPorId(id);
     }
 
@@ -42,12 +42,12 @@ public class InventarioController {
     }
 
     @PutMapping("/{id}")
-    public Inventario actualizar(@PathVariable Long id, @RequestBody Inventario inventario) {
+    public Inventario actualizar(@PathVariable String id, @RequestBody Inventario inventario) {
         return inventarioService.actualizar(id, inventario);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> eliminar(@PathVariable Long id) {
+    public ResponseEntity<Void> eliminar(@PathVariable String id) {
         inventarioService.eliminar(id);
         return ResponseEntity.noContent().build();
     }
