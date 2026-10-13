@@ -19,7 +19,7 @@ import com.Duoc.RecetaYa.demo.Model.Inventario;
 import com.Duoc.RecetaYa.demo.Service.InventarioService;
 
 @RestController
-@RequestMapping("/api/dispensacion")
+@RequestMapping("/api/inventario")
 public class InventarioController {
 
     @Autowired

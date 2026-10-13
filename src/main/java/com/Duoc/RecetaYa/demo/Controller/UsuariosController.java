@@ -18,7 +18,7 @@ import com.Duoc.RecetaYa.demo.Model.Usuarios;
 import com.Duoc.RecetaYa.demo.Service.UsuariosService;
 
 @RestController
-@RequestMapping("/api/dispensacion")
+@RequestMapping("/api/usuarios")
 public class UsuariosController {
 
     @Autowired
