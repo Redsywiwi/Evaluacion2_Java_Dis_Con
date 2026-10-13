@@ -4,7 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.Duoc.RecetaYa.demo.Exceptions.Excepciones;
+import com.Duoc.RecetaYa.demo.Exceptions.DispensacionPerdidaException;
 import com.Duoc.RecetaYa.demo.Model.Dispensacion;
 import com.Duoc.RecetaYa.demo.Repository.DispensacionRepository;
 
