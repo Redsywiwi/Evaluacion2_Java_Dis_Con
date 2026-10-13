@@ -17,7 +17,7 @@ public class UsuariosService {
         return usuariosRepository.findAll();
     }
 
-    public Usuarios buscarPorId(Long id) {
+    public Usuarios buscarPorId(String id) {
         return usuariosRepository.findById(id)
             .orElseThrow(() -> new UsuariosPerdidosException("Receto no encontrado"));
     }
@@ -26,7 +26,7 @@ public class UsuariosService {
         return usuariosRepository.save(usuarios);
     }
 
-    public Usuarios actualizar(Long id, Usuarios coso){
+    public Usuarios actualizar(String id, Usuarios coso){
         Usuarios usunuevo = buscarPorId(id);
         usunuevo.setNombre(coso.getNombre());
         usunuevo.setAppaterno(coso.getAppaterno());
@@ -40,7 +40,7 @@ public class UsuariosService {
         return usuariosRepository.save(usunuevo);
     }
 
-    public void eliminar(Long id) {
+    public void eliminar(String id) {
         Usuarios eliminarusuario= buscarPorId(id);
         usuariosRepository.delete(eliminarusuario);
     }

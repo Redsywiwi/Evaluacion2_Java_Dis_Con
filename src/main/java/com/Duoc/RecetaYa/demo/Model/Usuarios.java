@@ -17,11 +17,11 @@ public class Usuarios {
 
     private String nombre;
 
-    private String Appaterno;
+    private String appaterno;
 
-    private String Apmaterno;
+    private String apmaterno;
 
-    private String Rut;
+    private String rut;
 
     private String correo;
 

@@ -6,6 +6,6 @@ import com.Duoc.RecetaYa.demo.Model.Recetas;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RecetasRepository extends MongoRepository<Recetas, Long>{
+public interface RecetasRepository extends MongoRepository<Recetas, String>{
 
 }

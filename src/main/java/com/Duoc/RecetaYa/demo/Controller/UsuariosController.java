@@ -30,7 +30,7 @@ public class UsuariosController {
     }
 
     @GetMapping("/{id}")
-    public Usuarios buscarporId(@PathVariable Long id) {
+    public Usuarios buscarporId(@PathVariable String id) {
         return usuariosService.buscarPorId(id);
     }
 
@@ -41,12 +41,12 @@ public class UsuariosController {
     }
 
     @PutMapping("/{id}")
-    public Usuarios actualizar(@PathVariable Long id, @RequestBody Usuarios usuarios) {
+    public Usuarios actualizar(@PathVariable String id, @RequestBody Usuarios usuarios) {
         return usuariosService.actualizar(id, usuarios);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> eliminar(@PathVariable Long id) {
+    public ResponseEntity<Void> eliminar(@PathVariable String id) {
         usuariosService.eliminar(id);
         return ResponseEntity.noContent().build();
     }

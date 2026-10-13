@@ -32,7 +32,7 @@ public class RecetasController{
     }
 
     @GetMapping("/{id}")
-    public Recetas buscarporId(@PathVariable Long id) {
+    public Recetas buscarporId(@PathVariable String id) {
         return recetasService.buscarPorId(id);
     }
 
@@ -43,12 +43,12 @@ public class RecetasController{
     }
 
     @PutMapping("/{id}")
-    public Recetas actualizar(@PathVariable Long id, @RequestBody Recetas recetas) {
+    public Recetas actualizar(@PathVariable String id, @RequestBody Recetas recetas) {
         return recetasService.actualizar(id, recetas);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> eliminar(@PathVariable Long id) {
+    public ResponseEntity<Void> eliminar(@PathVariable String id) {
         recetasService.eliminar(id);
         return ResponseEntity.noContent().build();
     }

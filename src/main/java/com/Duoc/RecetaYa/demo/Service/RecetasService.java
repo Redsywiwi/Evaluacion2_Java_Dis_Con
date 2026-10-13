@@ -17,7 +17,7 @@ public class RecetasService {
         return recetasRepository.findAll();
     }
 
-    public Recetas buscarPorId(Long id) {
+    public Recetas buscarPorId(String id) {
         return recetasRepository.findById(id)
             .orElseThrow(() -> new RecetaPerdidaException("Receta no encontrada"));
     }
@@ -26,7 +26,7 @@ public class RecetasService {
         return recetasRepository.save(recetas);
     }
 
-    public Recetas actualizar(Long id, Recetas coso){
+    public Recetas actualizar(String id, Recetas coso){
         Recetas recnueva = buscarPorId(id);
         recnueva.setNombre(coso.getNombre());
         recnueva.setDescripcion(coso.getDescripcion());
@@ -35,7 +35,7 @@ public class RecetasService {
         return recetasRepository.save(recnueva);
     }
 
-    public void eliminar(Long id) {
+    public void eliminar(String id) {
         Recetas eliminarrec= buscarPorId(id);
         recetasRepository.delete(eliminarrec);
     }

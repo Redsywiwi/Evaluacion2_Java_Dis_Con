@@ -6,6 +6,6 @@ import com.Duoc.RecetaYa.demo.Model.Usuarios;
 import org.springframework.stereotype.Repository;
 
 @Repository 
-public interface UsuariosRepository extends MongoRepository<Usuarios, Long> {
+public interface UsuariosRepository extends MongoRepository<Usuarios, String> {
     
 }
